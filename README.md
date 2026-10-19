@@ -4,7 +4,7 @@ A GenLayer Intelligent Contract that binds a supplied software version transitio
 
 ## Verification status
 
-**Deployed source and existing finalized records VERIFIED; final product acceptance PENDING.** 24 CPython harness tests and 10 official SDK Direct Mode tests passed. Linter/SDK validation passed; full local WASM execution was not performed. All three existing transactions were independently observed as FINALIZED/SUCCESS/Normal in the official Studio Explorer, deployed source bytes match canonical source, and both records were read through the public product. The original user reports remain separately preserved. Website-wallet E2E is BLOCKED because the acceptance browser has no EIP-1193 wallet. [Current acceptance](FINAL_READINESS_REPORT.md) · [Runtime audit](RUNTIME_AUDIT.md) · [Submission draft](SUBMISSION_INTELLIGENT_CONTRACTS.md).
+**Deployed source and existing finalized records VERIFIED; final product acceptance PENDING.** 24 CPython harness tests and 10 official SDK Direct Mode tests passed. Linter/SDK validation passed; full local WASM execution was not performed. All three existing transactions were independently observed as FINALIZED/SUCCESS/Normal in the official Studio Explorer, deployed source bytes match canonical source, and both records were read through the public product. The original user reports remain separately preserved. Website-wallet E2E now has a successful user-signed transaction and independently verified product recovery/export. [Current acceptance](FINAL_READINESS_REPORT.md) · [Runtime audit](RUNTIME_AUDIT.md) · [Submission draft](SUBMISSION_INTELLIGENT_CONTRACTS.md).
 
 ## Consensus and deterministic checks
 
@@ -41,3 +41,7 @@ Direct Mode loads the pinned SDK from official GenVM v0.2.16 artifacts; it execu
 [Companion PatchDebt product](https://github.com/halihalibt/patchdebt-genlayer) includes the complete identical source. All work belongs to `halihalibt`. No unrelated account or project is part of this release.
 
 MIT License.
+
+## Wallet acceptance
+
+VERIFIED: transaction 0x50d745ee7ddfc89fcbf54c849585ab870b4215d1ca73f456511502dea7f28d82, request patchdebt-web-e2e-001, owner 0x49ce61764cca0c15a79e2d98baa535fc7547eb3a, COVERED/COVERED. Actual public website verified transaction binding/finality/leader execution/majority and exported the receipt-bound dossier. See FINAL_READINESS_REPORT.md and B evidence/WEBSITE_WALLET_DOSSIER.json. No second signature needed.
