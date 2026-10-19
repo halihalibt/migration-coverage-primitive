@@ -4,7 +4,7 @@ A GenLayer Intelligent Contract that binds a supplied software version transitio
 
 ## Verification status
 
-**Candidate source; not submission-ready.** 24 CPython tests and 10 official SDK Direct Mode tests pass locally. Official linter/SDK validation passes. Full WASM GenVM execution and real Studionet consensus have NOT been run. A Studio deployment and two outcomes are now reported by the user; see DEPLOYMENT_STATUS.md. They are not yet independently verified receipts. [Verification](VALIDATION.md) · [Runtime API audit](RUNTIME_AUDIT.md) · [Manual Studio package](MANUAL_STUDIO_EXECUTION.md).
+**Deployed source and existing finalized records VERIFIED; final product acceptance PENDING.** 24 CPython harness tests and 10 official SDK Direct Mode tests passed. Linter/SDK validation passed; full local WASM execution was not performed. All three existing transactions were independently observed as FINALIZED/SUCCESS/Normal in the official Studio Explorer, deployed source bytes match canonical source, and both records were read through the public product. The original user reports remain separately preserved. Website-wallet E2E is BLOCKED because the acceptance browser has no EIP-1193 wallet. [Current acceptance](FINAL_READINESS_REPORT.md) · [Runtime audit](RUNTIME_AUDIT.md) · [Submission draft](SUBMISSION_INTELLIGENT_CONTRACTS.md).
 
 ## Consensus and deterministic checks
 
@@ -41,7 +41,3 @@ Direct Mode loads the pinned SDK from official GenVM v0.2.16 artifacts; it execu
 [Companion PatchDebt product](https://github.com/halihalibt/patchdebt-genlayer) includes the complete identical source. All work belongs to `halihalibt`. No unrelated account or project is part of this release.
 
 MIT License.
-
-## Current final acceptance
-
-Deployed source identity and both finalized website readbacks are VERIFIED; all three existing transactions display FINALIZED/SUCCESS/Normal in official Explorer. See [current matrix](FINAL_READINESS_REPORT.md) and [independent evidence](evidence/EXPLORER_VERIFICATION.md). Earlier user-reported-only deployment statements are historical. Product-wallet E2E remains BLOCKED without a browser wallet. Full local WASM execution is not claimed. No Portal submission.
