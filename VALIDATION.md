@@ -1,12 +1,7 @@
-# Validation checkpoint
+# Validation index
 
-| Layer | Result | Scope |
-|---|---|---|
-| CPython | VERIFIED — 24/24 | Substituted SDK, storage, model and consensus; validates ordering, quotes, malformed JSON/types, duplicate keys/changes/indices, idempotency, owner isolation, quota, disagreement and quote/reason audit rejection. |
-| Official SDK Direct Mode | VERIFIED — 10/10 | genlayer-test 0.29.2, SDK from GenVM v0.2.16, native Python; real storage, Address formatting, hashes, production validator callbacks, errors and closure serialization; host/LLM and consensus are mocked. |
-| Official linter | VERIFIED | genvm-linter 0.11.0, schema 3 methods; 3 advisory W004 ordinary exception warnings. |
-| Full WASM GenVM | BLOCKED | No executor/Docker available; native Direct Mode is not a substitute. |
-| Stable RPC | BLOCKED | Read-only POST HTTP 403 / Cloudflare 1010. |
-| Real deployment/consensus | PENDING | No transaction sent, no deployed address. User Studio signing package is provided. |
+See [current acceptance matrix](FINAL_READINESS_REPORT.md), [independent Explorer evidence](evidence/EXPLORER_VERIFICATION.md), and [original user reports](evidence/STUDIO_REPORTED_EVIDENCE.md).
 
-The source checksum is independently calculated and stored in SOURCE_SHA256.txt. The initial checksum matched before edits; this release changes source and therefore has a new checksum. Evidence and limits must remain visible until actual onchain acceptance is recorded.
+VERIFIED: 24 CPython harness tests; 10 prior official SDK Direct Mode tests (native, not WASM); source/checksum equality; deployed source identity; two actual finalized website record reads; 19 frontend tests and production build.
+
+PENDING: full local WASM execution, mobile rendering acceptance, independent count readback. BLOCKED: new website-wallet E2E and live pending recovery without an installed wallet. Studio transactions are not product-wallet proof. Runtime details remain in RUNTIME_AUDIT.md (A) and intelligent-contract/RUNTIME_AUDIT.md (B).

@@ -1,46 +1,38 @@
-# Intelligent Contracts submission draft — DO NOT SUBMIT YET
+# Submission draft — final acceptance still pending
 
-PENDING / BLOCKED. Portal form has not been inspected; these are field-ready content drafts to be matched to its actual fields.
+Status: PENDING; do not submit to Portal yet. Actual form not inspected; labels below are semantic drafts, not invented required form fields.
 
-Name: Migration Coverage Primitive
+## Copyable English introduction
 
-English description:
+PatchDebt — Migration Coverage Primitive
 
-> A reusable GenLayer primitive for evidence-backed migration-guide coverage. It binds a supplied version transition, declared changes and guide snapshot to immutable owner-scoped records. Validators independently derive each finding and audit the proposed quotation and explanation. Deterministic checks reject fabricated evidence, omissions, ordering errors and request rebinding. The result records COVERED, MISSING, CONFLICT or UNKNOWN for each obligation; it does not prove software compatibility.
+PatchDebt is a GenLayer Intelligent Contract that audits a supplied migration guide against an explicit list of software changes. It stores ordered findings, verbatim evidence and explanations bound to the sender, request ID and canonical input hash. Independent validator review challenges the proposed findings. It identifies documentation gaps, conflicts and uncertainty without claiming software compatibility or complete change discovery.
 
-Source repository: https://github.com/halihalibt/migration-coverage-primitive
+## Field values
 
-Canonical source: https://github.com/halihalibt/migration-coverage-primitive/blob/main/contracts/migration_coverage.py
+- Repository (VERIFIED public): https://github.com/halihalibt/migration-coverage-primitive
+- Complete source (VERIFIED): https://github.com/halihalibt/migration-coverage-primitive/blob/main/contracts/migration_coverage.py
+- Contract (VERIFIED): `0x724AcFe201463a016f59aC41516D99ab789a5c34`
+- Network: Stable Studionet; configured chain ID 61999
+- Source SHA256 (VERIFIED): `f828966372c167491fb8e2a61be0d7d639b5170b1bd784ab01fa4bce93cf4aa3`
+- Evidence (VERIFIED observations): https://github.com/halihalibt/migration-coverage-primitive/blob/main/evidence/EXPLORER_VERIFICATION.md
+- Validation: https://github.com/halihalibt/migration-coverage-primitive/blob/main/FINAL_READINESS_REPORT.md
+- Contract runtime audit: https://github.com/halihalibt/migration-coverage-primitive/blob/main/RUNTIME_AUDIT.md
+- Contract CI: https://github.com/halihalibt/migration-coverage-primitive/actions/runs/39286212477 (unchanged source ancestor)
+- Logo (VERIFIED): https://raw.githubusercontent.com/halihalibt/patchdebt-genlayer/main/assets/patchdebt-logo.png — original PNG, 1024×1024, 189067 bytes
 
-Deployment and transaction IDs are now reported in the reconciled evidence below; independent verification remains PENDING.
+## Existing transaction evidence
 
-Independent contract evidence URLs:
+- Deployment: https://explorer-studio.genlayer.com/tx/0xfe07e2f31b1daa8ab577ad15ad6de2538c8ade6f782b97da31605581678d8387
+- Public assessment: https://explorer-studio.genlayer.com/tx/0xb9d04723fbfab34f971d1608cad2742207ec7691ca9f5c70a11a260db4e9a30b
+- Gap assessment: https://explorer-studio.genlayer.com/tx/0x2e7a9f227f9178725bbc4f86ebcf634e6570fbc24830b547e72011e5a5108a58
 
-- https://github.com/halihalibt/migration-coverage-primitive/blob/main/RUNTIME_AUDIT.md
-- https://github.com/halihalibt/migration-coverage-primitive/blob/main/VALIDATION.md
-- https://github.com/halihalibt/migration-coverage-primitive/actions/workflows/test.yml
+## Use
 
-Usage: deploy MigrationCoverage with no constructor parameters, call assess(request_id, payload_JSON_string), then read get_record(actual_sender, request_id). Full exact input and evidence return with the canonical hash. See MANUAL_STUDIO_EXECUTION.md.
+Constructor has no arguments. `assess(request_id, payload)` accepts the JSON input documented in README; `get_record(owner, request_id)` and `get_count(owner)` are public views. Existing records can be queried without a wallet. The website source check precedes reads; signing additionally requires an active wallet, accepted manifest and correct network.
 
-Logo: assets/patchdebt-logo.png in companion product (original shared product branding; not deployment evidence).
+## Remaining wallet step
 
-Before submission: supply verified real deployment/consensus evidence and complete target-runtime acceptance. Do not imply local Direct tests are chain execution. No Portal submission has occurred.
+In a browser with your Studionet wallet, open https://halihalibt.github.io/patchdebt-genlayer/ , Verify Source, Connect Wallet on chain 61999, Load Public Doc Input, enter a fresh request ID `patchdebt-web-e2e-001` (query first; if already used choose a new ID), and approve exactly one assessment. Recheck until finalized, export its dossier and return the transaction hash plus dossier. If submission is uncertain, recover and attach the original transaction ID; never resubmit. No private key or seed phrase is needed. This product-wallet transaction has NOT yet occurred.
 
-## Reconciled Studio evidence (supersedes earlier absence statements)
-
-# Existing Studio evidence — user-provided, not independently verified
-
-Reported network: Stable Studionet / 61999. Reported contract: `0x724AcFe201463a016f59aC41516D99ab789a5c34`. Actual source identity and transaction network details remain PENDING.
-
-Deployment transaction: `0xfe07e2f31b1daa8ab577ad15ad6de2538c8ade6f782b97da31605581678d8387`.
-
-Owner: `0x22acaa233b7b985b36ef168f2de9295334065b15`; reported get_count(owner): **2**.
-
-| Request | Reported state | Reported items | Input SHA256 | Existing transaction |
-|---|---|---|---|---|
-| patchdebt-public-001 | COVERED | COVERED, COVERED | `5da5070d1fdfe0ce0e1f9c09032d6488bf47579ffc73c0327f527f2a072dbbe7` | `0xb9d04723fbfab34f971d1608cad2742207ec7691ca9f5c70a11a260db4e9a30b` |
-| patchdebt-gap-001 | DEBT | COVERED, MISSING | `2f66e88c7134d6ea08b47b6199f3ab812b53192c4d5ac29923ebb34c8ac94e82` | `0x2e7a9f227f9178725bbc4f86ebcf634e6570fbc24830b547e72011e5a5108a58` |
-
-These are user-provided Studio outcomes. No independently retrieved receipts, finality/execution evidence or vote exports are asserted. Canonical source SHA256 is `f828966372c167491fb8e2a61be0d7d639b5170b1bd784ab01fa4bce93cf4aa3`; equality with deployed code remains PENDING. Existing transactions must not be recreated. Input snapshots in examples/live/covered.json and missing.json independently hash to the reported input identities. They are not full returned onchain records.
-
-Submission gate: deployed-source verification, independent record/receipt checks and product-wallet E2E remain PENDING. Do not submit this draft as fully verified.
+Product-wallet E2E and mobile render acceptance remain outstanding. Do not claim full local WASM execution or already completed Portal submission.

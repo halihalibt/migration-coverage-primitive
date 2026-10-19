@@ -41,3 +41,7 @@ Direct Mode loads the pinned SDK from official GenVM v0.2.16 artifacts; it execu
 [Companion PatchDebt product](https://github.com/halihalibt/patchdebt-genlayer) includes the complete identical source. All work belongs to `halihalibt`. No unrelated account or project is part of this release.
 
 MIT License.
+
+## Current final acceptance
+
+Deployed source identity and both finalized website readbacks are VERIFIED; all three existing transactions display FINALIZED/SUCCESS/Normal in official Explorer. See [current matrix](FINAL_READINESS_REPORT.md) and [independent evidence](evidence/EXPLORER_VERIFICATION.md). Earlier user-reported-only deployment statements are historical. Product-wallet E2E remains BLOCKED without a browser wallet. Full local WASM execution is not claimed. No Portal submission.
