@@ -1,0 +1,33 @@
+{
+  "ok": true,
+  "lint": {
+    "ok": true,
+    "passed": 2,
+    "warnings": [
+      {
+        "code": "W004",
+        "msg": "Bare Python exception ValueError in write method; advisory use gl.vm.UserError",
+        "line": 130
+      },
+      {
+        "code": "W004",
+        "msg": "Bare Python exception ValueError in write method; advisory use gl.vm.UserError",
+        "line": 139
+      },
+      {
+        "code": "W004",
+        "msg": "Bare Python exception ValueError in write method; advisory use gl.vm.UserError",
+        "line": 142
+      }
+    ]
+  },
+  "validate": {
+    "ok": true,
+    "contract": "MigrationCoverage",
+    "methods": 3,
+    "view_methods": 2,
+    "write_methods": 1,
+    "ctor_params": 0
+  },
+  "scope": "official genvm-linter 0.11.0; native SDK validation, not full WASM execution"
+}

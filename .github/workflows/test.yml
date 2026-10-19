@@ -1,21 +1,26 @@
-name: Contract Unit Tests
+name: Contract Checks
 on:
   push:
     branches: [main]
+    paths: ['contracts/**', 'tests/**', 'SOURCE_SHA256.txt', '.github/workflows/test.yml']
   pull_request:
     branches: [main]
   workflow_dispatch:
 permissions:
   contents: read
+concurrency:
+  group: contract-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   unit-tests:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Run mocked CPython harness
+      - name: Verify source SHA256
+        run: sha256sum -c SOURCE_SHA256.txt
+      - name: Run CPython harness (mocked, not GenVM)
         run: python -m unittest discover -s tests -v
