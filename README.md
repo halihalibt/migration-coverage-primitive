@@ -4,7 +4,7 @@ A GenLayer Intelligent Contract that binds a supplied software version transitio
 
 ## Verification status
 
-**Candidate source; not submission-ready.** 24 CPython tests and 10 official SDK Direct Mode tests pass locally. Official linter/SDK validation passes. Full WASM GenVM execution and real Studionet consensus have NOT been run. No deployed address or transaction is claimed. [Verification](VALIDATION.md) · [Runtime API audit](RUNTIME_AUDIT.md) · [Manual Studio package](MANUAL_STUDIO_EXECUTION.md).
+**Candidate source; not submission-ready.** 24 CPython tests and 10 official SDK Direct Mode tests pass locally. Official linter/SDK validation passes. Full WASM GenVM execution and real Studionet consensus have NOT been run. A Studio deployment and two outcomes are now reported by the user; see DEPLOYMENT_STATUS.md. They are not yet independently verified receipts. [Verification](VALIDATION.md) · [Runtime API audit](RUNTIME_AUDIT.md) · [Manual Studio package](MANUAL_STUDIO_EXECUTION.md).
 
 ## Consensus and deterministic checks
 
