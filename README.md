@@ -2,7 +2,7 @@
 
 A reusable GenLayer Intelligent Contract that checks whether a supplied migration guide gives actionable instructions for each declared software change. It stores ordered findings, verbatim evidence and explanations bound to package versions, the guide snapshot, sender and request ID.
 
-[Live application](https://halihalibt.github.io/patchdebt-genlayer/) · [Deployment](DEPLOYMENT_STATUS.md) · [Validation](VALIDATION.md) · [Usage](USAGE.md)
+[Live application](https://halihalibt.github.io/patchdebt-genlayer/) · [Deployment](DEPLOYMENT.md) · [Validation](VALIDATION.md) · [Usage](USAGE.md)
 
 ## How it works
 
